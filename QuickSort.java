@@ -1,7 +1,7 @@
 public class QuickSort{
 	public static void main(String[] args)
 	{
-		int[] arr = new int[] {54, 26, 93, 17, 77, 31, 44, 55, 20};
+		int[] arr = new int[] {55, 26, 93, 17, 77, 31, 44, 55, 20};
         quickSort(arr, 0, arr.length-1);
         printarr(arr);
 	}
@@ -19,13 +19,15 @@ public class QuickSort{
 		int pivotvalue = arr[left];
 		int leftmark = left + 1;
 		int rightmark = right;
-		while(leftmark < rightmark)
+		while(leftmark <= rightmark)
 		{
-			while(arr[leftmark] < pivotvalue)
+			while(arr[leftmark] <= pivotvalue)
 				leftmark = leftmark + 1;
 			while(arr[rightmark] > pivotvalue)
 				rightmark = rightmark - 1;
-			if(leftmark < rightmark)
+			if(leftmark > rightmark)
+				break;
+			else
 			{
 				int tmp = arr[rightmark];
 				arr[rightmark] = arr[leftmark];
